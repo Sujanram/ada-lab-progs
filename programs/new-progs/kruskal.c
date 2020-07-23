@@ -13,13 +13,13 @@ void find_min() {
             }
 }
 int check_cycle(int x, int y) {
-    if((parent[x] == parent[y]) && (parent[x] != 0))
+    if((parent[x] == parent[y]) && (parent[x] != 0))        //checks whether you have already added to your mst
         return 0;
-    else if (parent[x] == 0 && parent[y] == 0)
+    else if (parent[x] == 0 && parent[y] == 0)              //Not added both to mst
         parent[x] = parent[y] = x;
-    else if (parent[x] == 0)
+    else if (parent[x] == 0)                                //one of the node is havent added to mst so content is given to other
         parent[x] = parent[y];
-    else if (parent[x] != parent[y])
+    else if (parent[x] != parent[y])                        //one of the node is havent added to mst so content is given to other
         parent[y] = parent[x];
     return 1;
 }
